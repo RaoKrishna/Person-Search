@@ -1,0 +1,17 @@
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\PersonSearch.exe
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\PersonSearch.exe.config
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\EntityFramework.dll
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\EntityFramework.SqlServer.dll
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\EntityFramework.xml
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\EntityFramework.SqlServer.xml
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\View\MainWindow.baml
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\View\MainWindow.g.cs
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\App.g.cs
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch_MarkupCompile.cache
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch.g.resources
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch.Properties.Resources.resources
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch.csproj.GenerateResource.Cache
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch.exe
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch.pdb
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\bin\Debug\PersonSearch.pdb
+F:\MS\C#\Health Catalyst Project\PersonSearch\PersonSearch\obj\Debug\PersonSearch.csprojResolveAssemblyReference.cache

@@ -1,0 +1,93 @@
+﻿<Window x:Name="PersonSearch" x:Class="PersonSearch.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Person Search Application" Height="688" Width="679" ResizeMode="NoResize">
+    <Grid x:Name="grMainGrid" Background="#DADFE1">
+        <Label Content="Welcome to the Person Search Application" HorizontalAlignment="Left" Margin="180,36,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="14" Width="291"/>
+        <Menu HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="673" Background="#BDC3C7">
+            <MenuItem Header="Search Person" x:Name="btnSearch" Click="btnSearch_Click" Height="30"/>
+            <MenuItem x:Name="menuBtnAdd" Header="Add Person" Click="btnAddPerson_Click" Command="{Binding PersonIDCommand}" />
+            <MenuItem x:Name="menuBtnSeedData" Header="Seed Data" Click="btnSeedData_Click" Command="{Binding SeedPersonDataCommand}" RenderTransformOrigin="2.4,-0.833" />
+        </Menu>
+        <Grid x:Name="grAddPerson" HorizontalAlignment="Left" Height="300" Margin="34,64,0,0" VerticalAlignment="Top" Width="357" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Person ID : " Margin="0,10"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="First Name : " Margin="0,10"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Last Name : " Margin="0,10"/>
+            <TextBox x:Name="txtID" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="0,12,-55,12" Text="{ Binding Path=PersID, Mode=TwoWay}" IsEnabled="False"/>
+            <TextBox x:Name="txtFirstName" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="0,12,-55,12" Text="{ Binding Path=FName, Mode=TwoWay}"/>
+            <TextBox x:Name="txtLastName" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="0,12,-55,12" Text="{ Binding Path=LName, Mode=TwoWay}"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Address : " Margin="0,10"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Age : " Margin="0,10"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Interests : " Margin="0,10"/>
+            <TextBox x:Name="txtAddress" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="0,12,-55,12" Text="{ Binding Path=PAddress, Mode=TwoWay}"/>
+            <TextBox x:Name="txtAge" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="0,12,-55,12" Text="{ Binding Path=PAge, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+            <TextBox x:Name="txtInterests" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Margin="0,12,-55,12" Text="{ Binding Path=PInterests, Mode=TwoWay}" />
+        </Grid>
+        <Grid x:Name="grBrowseImage" HorizontalAlignment="Left" Height="300" Margin="434,64,0,0" VerticalAlignment="Top" Width="200" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="200" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblBrowse" Grid.Row="0" Margin="60,12,43,12" Content="Upload Image " />
+            <Button x:Name="btnBrowse" Grid.Row="1" Margin="0,12" Content="Browse" Command="{Binding BrowseImageCommand}" Background="#BDC3C7"/>
+            <Image x:Name="imgPersImage" Grid.Row="2" Margin="0,12" Source="{Binding PathName}" Visibility="Visible" />
+        </Grid>
+        <Button x:Name="btnAdd" Content="Add" Background="#BDC3C7" HorizontalAlignment="Left" Margin="300,400,0,0" VerticalAlignment="Top" Width="91" Click="btnAdd_Click" Command="{Binding AddPersonCommand}" Visibility="Collapsed"/>
+        <Label x:Name="lblMessage" Content="{Binding AddStatus, Mode=TwoWay}" HorizontalAlignment="Left" Margin="36,445,0,0" Visibility="{Binding VisibilityStatus}" FontFamily="Segoe UI Semibold" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.2,-6.4"/>
+        <Grid x:Name="grSearchPerson" HorizontalAlignment="Left" Height="50" Margin="85,74,0,0" VerticalAlignment="Top" Width="500" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblEnterName" Grid.Row="0" Grid.Column="0" Margin="0,12" Content="Enter the Name : " />
+            <TextBox x:Name="txtPersonName" Grid.Row="0" Grid.Column="1" Margin="10,12" TextWrapping="Wrap" VerticalContentAlignment="Center" TextAlignment="Left" Text="{ Binding Path=SrchName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="btnSearchPerson" Grid.Row="0" Grid.Column="2" Background="#BDC3C7" Margin="10,12,-28,12" Content="Search" Click="btnSearchPerson_Click" Command="{Binding SearchPersonCommand}"/>
+        </Grid>
+        <DataGrid x:Name="dgDetails" Visibility="{Binding GridVisibility}" ItemsSource="{Binding GridPerson, Mode=TwoWay}" AutoGenerateColumns="False" ColumnWidth="80" Margin="34,145,0,49" Height="Auto" GridLinesVisibility="Horizontal" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" EnableRowVirtualization="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" MaxHeight="500" Width="580" UseLayoutRounding="False" TextOptions.TextFormattingMode="Display" SelectionUnit="Cell" SelectionMode="Single" RowBackground="#D2D7D3" HeadersVisibility="Column" CanUserReorderColumns="False" ScrollViewer.CanContentScroll="True" AreRowDetailsFrozen="True">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#BDC3C7" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Person ID" Binding="{Binding PersonID, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTemplateColumn Header="Image" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <Image Height="70" Source="{Binding ImagePath, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,5,0" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Address" Binding="{Binding Address, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Age" Binding="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Interests" Binding="{Binding Interests, UpdateSourceTrigger=PropertyChanged}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblFetchMessage" Content="{Binding FetchMessage, Mode=TwoWay}" Visibility="{Binding VisibilityFetchStatus}" HorizontalAlignment="Left" Margin="163,147,0,0" FontFamily="Segoe UI Semibold" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="2.1,-9"/>
+        <Label x:Name="lblExceptionMessage" Content="{Binding ExceptionMessage, Mode=TwoWay}" HorizontalAlignment="Left" Margin="36,487,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="14" Foreground="Red" Height="142" Width="565"/>
+        <Label x:Name="lblSeedDataStatus" Content="{Binding SeedDataStatus, Mode=TwoWay}" HorizontalAlignment="Left" Margin="100,86,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="14" Width="485" Height="169" />
+    </Grid>
+</Window>

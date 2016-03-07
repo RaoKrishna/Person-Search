@@ -1,0 +1,12 @@
+F:\MS\C#\Health Catalyst Project\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\UnitTest.dll
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\UnitTest.pdb
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\PersonSearch.exe
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\EntityFramework.dll
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\PersonSearch.pdb
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\EntityFramework.xml
+F:\MS\C#\Health Catalyst Project\UnitTest\obj\Debug\UnitTest.dll
+F:\MS\C#\Health Catalyst Project\UnitTest\obj\Debug\UnitTest.pdb
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\UnitTest.dll.config
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\EntityFramework.SqlServer.dll
+F:\MS\C#\Health Catalyst Project\UnitTest\bin\Debug\EntityFramework.SqlServer.xml
